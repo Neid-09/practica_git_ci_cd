@@ -29,5 +29,14 @@ jobs:
     - name: Test with pytest
       working-directory: .
       run: pytest tests/
-    
-    
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@v2
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    - name: Build and push
+      uses: docker/build-push-action@v6
+      with:
+        push: true
+        tags: ghcr.io/Neid-09/practica-git-ci-cd:latest
