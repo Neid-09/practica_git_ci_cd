@@ -39,4 +39,4 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         push: true
-        tags: ghcr.io/Neid-09/practica-git-ci-cd:latest
+        tags: ghcr.io/neid-09/practica-git-ci-cd:latest
