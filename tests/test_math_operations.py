@@ -21,3 +21,8 @@ def test_divide():
 def test_divide_by_zero():
     with pytest.raises(ValueError, match="Cannot divide by zero"):
         divide(10, 0)
+        
+def test_resta():
+    from src.math_operations import resta
+    assert resta(10, 5) == 5
+    assert resta(-1, -1) == 0
